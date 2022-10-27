@@ -13,7 +13,7 @@ export default function FeaturedGame() {
                 <GameItem imageGame="Thumbnail-2" title="Call of Duty: Modern" category="Mobile" />
                 <GameItem imageGame="Thumbnail-3" title="Mobile Legends" category="Mobile" />
                 <GameItem imageGame="Thumbnail-4" title="Clash of Clans" category="Mobile" />
-                <GameItem imageGame="Thumbnail-5" title="Valorant" category="Dwsktop" />
+                <GameItem imageGame="Thumbnail-5" title="Valorant" category="Desktop" />
             </div>
         </div>
     </section>

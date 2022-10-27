@@ -28,7 +28,7 @@ export default function EditProfile() {
                                 </div>
                             </div>
                             <div className="image-upload">
-                                <label for="avatar">
+                                <label htmlFor="avatar">
                                     <svg width="90" height="90" viewBox="0 0 90 90" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="45" cy="45" r="45" fill="#E7EAF5" />
@@ -50,19 +50,19 @@ export default function EditProfile() {
                             </div>
                         </div>
                         <div className="pt-30">
-                            <label for="name" className="form-label text-lg fw-medium color-palette-1 mb-10">Full
+                            <label htmlFor="name" className="form-label text-lg fw-medium color-palette-1 mb-10">Full
                                 Name</label>
                             <input type="text" className="form-control rounded-pill text-lg" id="name" name="name"
                                 aria-describedby="name" placeholder="Enter your name" />
                         </div>
                         <div className="pt-30">
-                            <label for="email" className="form-label text-lg fw-medium color-palette-1 mb-10">Email
+                            <label htmlFor="email" className="form-label text-lg fw-medium color-palette-1 mb-10">Email
                                 Address</label>
                             <input type="email" className="form-control rounded-pill text-lg" id="email" name="email"
                                 aria-describedby="email" placeholder="Enter your email address" />
                         </div>
                         <div className="pt-30">
-                            <label for="phone" className="form-label text-lg fw-medium color-palette-1 mb-10">Phone</label>
+                            <label htmlFor="phone" className="form-label text-lg fw-medium color-palette-1 mb-10">Phone</label>
                             <input type="tel" className="form-control rounded-pill text-lg" id="phone" name="phone"
                                 aria-describedby="phone" placeholder="Enter your phone number" />
                         </div>
