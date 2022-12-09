@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CompleteCheckout() {
   return (
     <>
@@ -127,12 +129,12 @@ export default function CompleteCheckout() {
                     WhatsApp</p>
             </div>
             <div className="button-group d-flex flex-column mx-auto">
-                <a className="btn btn-dashboard fw-medium text-lg text-white rounded-pill mb-16"
-                    href="../member/overview.html" role="button">My
-                    Dashboard</a>
-                <a className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill" href="#"
-                    role="button">WhatsApp
-                    ke Admin</a>
+                <Link href="/member" >
+                <a className="btn btn-dashboard fw-medium text-lg text-white rounded-pill mb-16" role="button">MyDashboard</a>
+                </Link>
+                <Link href="#" >
+                <a className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill" role="button">WhatsApp ke Admin</a>
+                </Link>
             </div>
         </div>
     </section>

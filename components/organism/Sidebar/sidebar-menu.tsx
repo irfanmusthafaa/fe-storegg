@@ -6,11 +6,12 @@ interface SideBarMenuProps {
     title: string;
     icon: "icon-overview" | "icon-transaction" | "icon-message" | "icon-card" | "icon-reward" |"icon-setting" | "icon-logout" ;
     active?: boolean;
-    href: string;
+    href?: string;
+    onClick?: () => void;
 }
 
 export default function SidebarMenu(props: Partial<SideBarMenuProps>) {
-    const { title, icon, active, href} = props;
+    const { title, icon, active, href, onClick} = props;
     const classItem = cx({
         item: true,
         'mb-30': true,
@@ -18,14 +19,19 @@ export default function SidebarMenu(props: Partial<SideBarMenuProps>) {
     })
   return (
     <div className="menus">
-        <div className={classItem}>
+        <div className={classItem} onClick={onClick}>
             <div className="me-3">
                 <Image src={`/icon/${icon}.svg`} width={25} height={25} />
             </div>
                 <p className="item-title m-0">
+                {onClick ? (
+                    <a className="text-lg text-decoration-none">{title}</a>
+                ) : (
                 <Link href={href || '#'}>
                 <a className="text-lg text-decoration-none">{title}</a>
                 </Link>
+                )}
+                
                 </p>
         </div>
                    

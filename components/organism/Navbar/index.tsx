@@ -8,9 +8,12 @@ export default function Navbar() {
     <section>
         <nav className="navbar navbar-expand-lg navbar-light bg-light bg-white pt-lg-40 pb-lg-40 pt-30 pb-50">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <Link href={'/'}>
+                <a className="navbar-brand">
                     <Image src="/icon/logo.png" width={60} height={60} />
                 </a>
+                </Link>
+                
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -33,7 +36,7 @@ export default function Navbar() {
                         <Link href="/#"><a className="nav-link">Global Rank</a></Link>
                         </li>
                         
-                        <Auth isLogin />
+                        <Auth />
                     </ul>
                 </div>
             </div>

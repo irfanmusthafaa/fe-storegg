@@ -14,6 +14,8 @@ import '../styles/sidebar.css';
 import '../styles/transactions.css';
 import '../styles/transactions-detail.css';
 import '../styles/edit-profile.css';
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -43,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossOrigin="anonymous">
     </script>
     <Component {...pageProps} />
+    <ToastContainer />
     </>
   ) 
 }

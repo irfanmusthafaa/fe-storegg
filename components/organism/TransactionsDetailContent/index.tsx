@@ -1,7 +1,13 @@
+import { HistoryTransactionTypes } from "../../../services/data-types";
 import Row from "./Row";
 
+interface  TransactionDetailContensProps{
+    data: HistoryTransactionTypes
+}
 
-export default function TransactionsDetailContent() {
+export default function TransactionsDetailContent(props: TransactionDetailContensProps) {
+    const { data } = props;
+    console.log('data:', data)
   return (
     <>
      <main className="main-wrapper">
@@ -19,32 +25,33 @@ export default function TransactionsDetailContent() {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="fw-bold text-xl color-palette-1 mb-10">Mobile Legends:<br /> The New
-                                            Battle 2021</p>
-                                        <p className="color-palette-2 m-0">Category: Mobile</p>
+                                        <p className="fw-bold text-xl color-palette-1 mb-10">
+                                            {data.historyVoucherTopup.gameName}
+                                        </p>
+                                        <p className="color-palette-2 m-0">Category: {data.historyVoucherTopup.category}</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="fw-medium text-center label pending m-0 rounded-pill">Pending</p>
+                                    <p className="fw-medium text-center label pending m-0 rounded-pill">{data.status}</p>
                                 </div>
                             </div>
                             <hr />
                             <div className="purchase pt-30">
                                 <h2 className="fw-bold text-xl color-palette-1 mb-20">Purchase Details</h2>
-                                <Row title="Your Game ID" value="masayoshizero" />
+                                <Row title="Your Game ID" value={data.accountUser}/>
                                 <Row title="Order ID" value="#GG001" />
-                                <Row title="Item" value="250 Dinamonds" />
-                                <Row title="Price" value="42280500" />
-                                <Row title="Tax (10%)" value="4228000" />
-                                <Row title="Total (10%)" value="55000600" classNames="color-palette-4" />
+                                <Row title="Item" value={`${data.historyVoucherTopup.coinQuantity} ${data.historyVoucherTopup.coinName}`} />
+                                <Row title="Price" value={data.historyVoucherTopup.price} />
+                                <Row title="Tax (10%)" value={data.tax} />
+                                <Row title="Total" value={data.value} classNames="color-palette-4" />
                             </div>
                             <div className="payment pt-10 pb-10">
                                 <h2 className="fw-bold text-xl color-palette-1 mb-20">Payment Informations</h2>
-                                <Row title="Your Account Name" value="Masayoshingga Zero" />
-                                <Row title="Type" value="Worldwide Transfer" />
-                                <Row title="Bank Name" value="Mandiri" />
-                                <Row title="Bank Account Name" value="PT Store GG Indonesia" />
-                                <Row title="Bank Number" value="1800- 9090 - 2022" />
+                                <Row title="Your Account Name" value={data.name} />
+                                <Row title="Type" value={data.historyPayment.type} />
+                                <Row title="Bank Name" value={data.historyPayment.bankName} />
+                                <Row title="Bank Account Name" value={data.historyPayment.name} />
+                                <Row title="Bank Number" value={data.historyPayment.noRekening} />
                                
                             </div>
                             <div className="d-md-block d-flex flex-column w-100">
