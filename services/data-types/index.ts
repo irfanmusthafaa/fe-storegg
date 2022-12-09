@@ -17,7 +17,7 @@ export interface BanksTypes{
     bankName: string
 }
 
-export interface paymentsTypes{
+export interface PaymentsTypes{
     _id: string,
     type: string,
     banks: BanksTypes[]

@@ -19,7 +19,6 @@ export default function SignInForm() {
             toast.error("Email dan Password harus diisi")
         }else{
             const response = await setLogin(data);
-            console.log(response)
             if(response.error){
                 toast.error(response.message)
             }else{

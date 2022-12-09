@@ -10,9 +10,6 @@ export default function SignUpForm() {
     const router = useRouter()
 
     const onSubmit = () => {
-        console.log('name:', name);
-        console.log('email:', email);
-        console.log('password:', password);
         const userForm = {
             name,
             email,

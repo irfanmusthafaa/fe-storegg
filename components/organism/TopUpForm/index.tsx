@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from 'react-toastify';
-import { BanksTypes, NominalsTypes, paymentsTypes } from "../../../services/data-types";
+import { BanksTypes, NominalsTypes, PaymentsTypes } from "../../../services/data-types";
 import NominalItem from "./NominalItem"
 import PaymentItem from "./PaymentItem"
 
 interface TopUpFormTypes{
     nominals: NominalsTypes[];
-    payments: paymentsTypes[];
+    payments: PaymentsTypes[];
 }
 
 export default function TopUpForm(props: TopUpFormTypes) {
@@ -23,7 +23,7 @@ export default function TopUpForm(props: TopUpFormTypes) {
         setNominalItem(data)
     }
 
-    const onPaymentItemChange = (payment: paymentsTypes, bank: BanksTypes) => {
+    const onPaymentItemChange = (payment: PaymentsTypes, bank: BanksTypes) => {
         const data = {
             payment,
             bank
@@ -32,10 +32,6 @@ export default function TopUpForm(props: TopUpFormTypes) {
     }
 
     const onSubmit = () => {
-        console.log('verifyID', verifyID)
-        console.log('bank account', bankAccountName)
-        console.log('nominal', nominalItem)
-        console.log('payment', paymentItem)
         if( verifyID === '' || nominalItem === '' || paymentItem === '' || bankAccountName === ''){
             toast.error("Semua data harus diisi !!")
         }else{
@@ -54,7 +50,6 @@ export default function TopUpForm(props: TopUpFormTypes) {
     }
   return (
     <>
-    <form action="./checkout.html" method="POST">
                         <div className="pt-md-50 pt-30">
                             <div className="">
                                 <label 
@@ -139,7 +134,6 @@ export default function TopUpForm(props: TopUpFormTypes) {
                                 Continue
                                </button>
                         </div>
-                    </form>
     </>
   )
 }

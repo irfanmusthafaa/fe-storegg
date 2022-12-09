@@ -7,7 +7,6 @@ interface  TransactionDetailContensProps{
 
 export default function TransactionsDetailContent(props: TransactionDetailContensProps) {
     const { data } = props;
-    console.log('data:', data)
   return (
     <>
      <main className="main-wrapper">

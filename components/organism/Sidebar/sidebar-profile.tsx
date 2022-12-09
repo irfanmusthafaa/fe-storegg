@@ -16,7 +16,6 @@ export default function SidebarProfile() {
     if(token){
         const jwtToken = atob(token);
         const payload:  JWTPayloadTypes = jwtDecode(jwtToken)
-        console.log(payload)
         const userFromPayload: UserTypes = payload.player;
         const IMG = process.env.NEXT_PUBLIC_IMG;
         userFromPayload.avatar = `${IMG}/${userFromPayload.avatar}`

@@ -1,4 +1,7 @@
-interface InputFormProps{
+import { InputHTMLAttributes } from "react";
+
+
+export interface InputFormProps extends InputHTMLAttributes<HTMLInputElement>{
     label: string;
 }
 

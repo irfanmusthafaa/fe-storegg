@@ -8,15 +8,24 @@ import { updateProfile } from "../../services/member";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
-export default function EditProfile() {
-    const [user, setUser] = useState({
-        id: '',
-        email: '',
-        name: '',
-        avatar: ''
-    })
+interface UserStateTypes {
+    id: string;
+    name: string;
+    email: string;
+    avatar: any;
+    phoneNumber: string;
+  }
 
-    const [imagePreview, setImagePreview] = useState(null);
+export default function EditProfile() {
+    const [user, setUser] = useState<UserStateTypes>({
+        id: '',
+        name: '',
+        email: '',
+        avatar: '',
+        phoneNumber: '',
+      });
+
+    const [imagePreview, setImagePreview] = useState('/');
 
     const router = useRouter();
 
@@ -41,7 +50,6 @@ export default function EditProfile() {
         if(response.error){
             toast.error(response.message)
         }else{
-            console.log('data', response)
             Cookies.remove('token')
             router.push('/sign-in')
         }
@@ -71,7 +79,7 @@ export default function EditProfile() {
                                 name="avatar" 
                                 accept="image/png, image/jpeg" 
                                 onChange={(event) => {
-                                    const img = event.target.files[0]
+                                    const img = event.target.files![0]
                                     setImagePreview(URL.createObjectURL(img))
                                     return setUser({
                                         ...user,

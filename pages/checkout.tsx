@@ -10,7 +10,6 @@ interface CheckoutProps {
 }
 export default function Checkout(props: CheckoutProps) {
   const { user } = props;
-  console.log('user :', user)
   return (
     <>
     <section className="checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">
@@ -53,13 +52,11 @@ export async function getServerSideProps({req} : GetServerSideProps) {
 
   const jwtToken = Buffer.from(token, 'base64').toString('ascii');
   const payload: JWTPayloadTypes = jwtDecode(jwtToken)
-  console.log(payload)
   const userFromPayload: UserTypes = payload.player;
   const IMG = process.env.NEXT_PUBLIC_IMG;
   userFromPayload.avatar = `${IMG}/${userFromPayload.avatar}`
         
 
-  console.log('token :', token)
   return{
     props: {
       user: userFromPayload, 
